@@ -1,0 +1,40 @@
+@import 'styles/utils/theme.scss';
+@import 'styles/utils/headroom.scss';
+
+.headroom {
+  &__link {
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+    &__logo {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      margin-bottom: 0;
+      height: 50px;
+    }
+  }
+  &__navigation {
+    display: flex;
+    justify-content: flex-end;
+    font-family: $theme-font-family-body;
+    font-weight: 500;
+    font-size: 1.1rem;
+    align-items: center;
+    a {
+      color: $white-base;
+      margin-left: 2rem;
+      transition: all $transitions-default-duration;
+      &:hover {
+        color: $white-grey;
+      }
+    }
+  }
+}
+
+

@@ -1,9 +1,56 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ title, description, banner, pathname, article }) => (
+interface SEOProps {
+  title?: string | object | boolean,
+  description?: string,
+  banner?: string,
+  pathname?: string,
+  article?: boolean,
+}
+
+interface SchemaOrgJSONLD {
+  '@context'?: string,
+  '@type'?: string,
+  '@id'?: string,
+  url?: string,
+  name?: string | boolean | object,
+  alternateName?: string,
+  headline?: string | boolean | object,
+  image?: {
+    '@type'?: string,
+    url?: string,
+  },
+  description?: string,
+  datePublished?: string,
+  dateModified?: string,
+  author?: {
+    '@type'?: string,
+    name?: string,
+  },
+  publisher?: {
+    '@type'?: string,
+    name?: string,
+    logo?: {
+      '@type'?: string,
+      url?: string,
+    },
+  },
+  isPartOf?: string,
+  mainEntityOfPage?: {
+    '@type'?: string,
+    '@id'?: string,
+  },
+}
+
+const SEO = ({
+  title,
+  description,
+  banner,
+  pathname,
+  article,
+}: SEOProps) => (
   <StaticQuery
     query={query}
     render={({
@@ -31,7 +78,7 @@ const SEO = ({ title, description, banner, pathname, article }) => (
         url: `${siteUrl}${pathname || '/'}`,
       };
       const realPrefix = pathPrefix === '/' ? '' : pathPrefix;
-      let schemaOrgJSONLD = [
+      let schemaOrgJSONLD: SchemaOrgJSONLD[] = [
         {
           '@context': 'http://schema.org',
           '@type': 'WebSite',
@@ -92,7 +139,11 @@ const SEO = ({ title, description, banner, pathname, article }) => (
 
             {/* OpenGraph  */}
             <meta property="og:url" content={seo.url} />
-            <meta property="og:type" content={article ? 'article' : null} />
+            {
+              article && (
+                <meta property="og:type" content={'article'} />
+              )
+            }
             <meta property="og:title" content={seo.title} />
             <meta property="og:description" content={seo.description} />
             <meta property="og:image" content={seo.image} />
@@ -111,22 +162,6 @@ const SEO = ({ title, description, banner, pathname, article }) => (
 );
 
 export default SEO;
-
-SEO.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  banner: PropTypes.string,
-  pathname: PropTypes.string,
-  article: PropTypes.bool,
-};
-
-SEO.defaultProps = {
-  title: null,
-  description: null,
-  banner: null,
-  pathname: null,
-  article: false,
-};
 
 const query = graphql`
   query SEO {

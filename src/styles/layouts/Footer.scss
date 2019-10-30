@@ -1,0 +1,20 @@
+@import 'styles/utils/theme.scss';
+
+.wrap {
+  position: relative;
+  padding-top: 2rem;
+  bottom: 0;
+  box-shadow: $shadow-footer;
+  background: $gradient-left-to-right;
+  font-family: $theme-font-family-body;
+  font-weight: 500;
+  @media (max-width: $theme-breakpoints-s) {
+    padding-top: 7rem;
+  }
+  &__content {
+    margin: 0;
+    padding-bottom: 2rem;
+    text-align: center;
+    color: $white-light;
+  }
+}

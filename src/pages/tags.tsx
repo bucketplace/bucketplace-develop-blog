@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Layout, Container } from 'layouts';
 import { Header, TagsBlock } from 'components';
 
-const Tags = ({ pageContext }) => {
+interface TagsProps {
+  pageContext: {
+    tags: string[]
+  }
+}
+const Tags = ({ pageContext }: TagsProps) => {
   const { tags } = pageContext;
 
   return (
@@ -17,9 +21,3 @@ const Tags = ({ pageContext }) => {
 };
 
 export default Tags;
-
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    tags: PropTypes.array,
-  }),
-};

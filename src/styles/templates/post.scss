@@ -1,0 +1,15 @@
+@import 'styles/utils/theme.scss';
+
+.suggestion-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background: $white-light;
+  box-shadow: $shadow-suggestion;
+}
+
+.post-suggestion {
+  display: flex;
+  align-items: center;
+  margin: 1rem 3rem 0 3rem;
+}

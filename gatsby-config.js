@@ -7,11 +7,19 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-typescript',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        includePaths: ['src/']
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
         path: `${__dirname}/content/posts`,
+
       },
     },
     'gatsby-transformer-sharp',

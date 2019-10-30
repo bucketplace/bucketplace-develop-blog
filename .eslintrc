@@ -3,7 +3,7 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
   },
   "rules": {
     "strict": 0,
@@ -18,7 +18,7 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
     "prettier/prettier": ["warn", "error", {

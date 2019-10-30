@@ -1,0 +1,21 @@
+@import 'styles/utils/theme.scss';
+
+.container {
+  margin: auto;
+  padding: 3rem 1.5rem;
+  width: 60%;
+  max-width: $theme-layout-base;
+  height: 100%;
+  flex: 1;
+
+  @media (max-width: $theme-breakpoints-m) {
+    width: 90%;
+  }
+
+  @media (max-width: $theme-breakpoints-s) {
+    width: 95%;
+  }
+  &--center {
+    text-align: center;
+  }
+}

@@ -1,25 +1,54 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import styled from '@emotion/styled';
-import PropTypes from 'prop-types';
 import { Layout, Container, Content } from 'layouts';
 import { TagsBlock, Header, SEO } from 'components';
-import '../styles/prism';
+import 'styles/templates/post.scss';
 
-const SuggestionBar = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  background: ${props => props.theme.colors.white.light};
-  box-shadow: ${props => props.theme.shadow.suggestion};
-`;
-const PostSuggestion = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 1rem 3rem 0 3rem;
-`;
+const PostSuggestion = ( {
+  children,
+} : {children: React.ReactElement}) => {
+  return (
+    <div className='post-suggestion'>
+      { children }
+    </div>
+  )
+}
 
-const Post = ({ data, pageContext }) => {
+interface PostProps {
+  pageContext: {
+    prev: {
+      frontmatter: {
+        path: string,
+        title: string,
+      },
+    },
+    next: {
+      frontmatter: {
+        path: string,
+        title: string,
+      },
+    },
+  },
+  data: {
+    markdownRemark: {
+      html: any,
+      frontmatter:{
+        date: string | boolean,
+        title: string | object | boolean,
+        tags: string[],
+        path: string,
+        description: string,
+        cover: any,
+      },
+      excerpt: string,
+    },
+  }
+}
+
+const Post = ({
+  data,
+  pageContext,
+}: PostProps): React.ReactElement => {
   const { next, prev } = pageContext;
   const {html, frontmatter, excerpt } = data.markdownRemark
   const {date, title, tags, path, description} = frontmatter
@@ -39,7 +68,7 @@ const Post = ({ data, pageContext }) => {
         <Content input={html} />
         <TagsBlock list={tags || []} />
       </Container>
-      <SuggestionBar>
+      <div className='suggestion-bar'>
         <PostSuggestion>
           {prev && (
             <Link to={prev.frontmatter.path}>
@@ -56,20 +85,12 @@ const Post = ({ data, pageContext }) => {
             </Link>
           )}
         </PostSuggestion>
-      </SuggestionBar>
+      </div>
     </Layout>
   );
 };
 
 export default Post;
-
-Post.propTypes = {
-  pageContext: PropTypes.shape({
-    prev: PropTypes.object,
-    next: PropTypes.object,
-  }).isRequired,
-  data: PropTypes.object.isRequired,
-};
 
 export const query = graphql`
   query($pathSlug: String!) {
