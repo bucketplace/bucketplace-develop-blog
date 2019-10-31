@@ -8,6 +8,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-typescript',
+    'gatsby-plugin-react-svg',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
@@ -36,6 +37,7 @@ module.exports = {
             },
           },
           'gatsby-remark-prismjs',
+          'gatsby-remark-ruby'
         ],
       },
     },
@@ -69,5 +71,11 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: "UA-46752799-10",
+      },
+    }
   ],
 };

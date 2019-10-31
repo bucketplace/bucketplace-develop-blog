@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Headroom from 'react-headroom';
 
-import logo from './header-logo.png';
+import Logo from './logo.svg';
 
 import 'styles/layouts/NavBar.scss';
 
@@ -12,10 +12,9 @@ const NavBar = () => (
       className='headroom__link'
       to="/"
     >
-      <img
-        src={logo}
+      <Logo
         className='headroom__link__logo'
-        alt="Gatsby Logo"
+        alt="Ohouse Logo"
       />
     </Link>
     <nav className='headroom__navigation'>
