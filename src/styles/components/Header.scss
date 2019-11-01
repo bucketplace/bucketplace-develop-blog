@@ -1,24 +1,19 @@
 @import 'styles/utils/theme.scss';
 
 .header {
-  -webkit-clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
-  clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
-  @media (max-width: $theme-breakpoints-s) {
-    -webkit-clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
-    clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
-  }
-  background: $gradient-right-to-left;
-  height: 300px;
-  @media (max-width: $theme-breakpoints-m) {
-    height: 300px;
-  }
+  background-color: $white-light;
+  color: $black-base;
+  height: 350px;
+  transition: $transitions-boom-duration height;
   @media (max-width: $theme-breakpoints-s) {
     height: 275px;
+  }
+  @media (max-width: $theme-breakpoints-xs) {
+    height: 350px;
   }
   position: relative;
   overflow: hidden;
   &__content {
-    color: $white-base;
     z-index: 0;
     position: absolute;
     top: 50%;
@@ -28,13 +23,14 @@
     flex-direction: column;
     text-align: center;
     width: 100%;
+    height: 100%;
     max-width: $theme-layout-base;
     padding: 0 2rem;
-    margin-bottom: 3rem;
     align-items: center;
   }
   &__sub-title {
     max-width: 650px;
-    color: $white-light;
+    color: $black-base;
+    font-family: $theme-font-family-body;
   }
 }

@@ -15,6 +15,7 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: $theme-font-family-body;
   }
 
   html,
@@ -42,7 +43,7 @@ body {
     color: $white-light;
   }
 
-  h1 {
-    font-family: $theme-font-family-heading;
+  * {
+    font-family: $theme-font-family-body;
   }
 }

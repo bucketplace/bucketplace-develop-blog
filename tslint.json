@@ -1,16 +1,15 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint-react",
-        "tslint:latest",
-        "tslint-plugin-prettier"
-    ],
-    "prettier": true,
-    "jsx-no-multiline-js": false,
-    "jsx-no-lambda": false,
-    "import-name": false,
-    "no-boolean-literal-compare": false,
-    "jsRules": {},
-    "rules": {},
-    "rulesDirectory": ["tslint-plugin-prettier"]
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint-react",
+    "tslint:latest"
+  ],
+  "prettier": true,
+  "jsx-no-multiline-js": false,
+  "jsx-no-lambda": false,
+  "import-name": false,
+  "no-boolean-literal-compare": false,
+  "jsRules": {},
+  "rules": {},
+  "quotemark": [true, "single"]
 }

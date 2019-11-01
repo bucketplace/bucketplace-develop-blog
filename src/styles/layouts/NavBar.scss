@@ -6,6 +6,13 @@
     display: flex;
     font-weight: 700;
     align-items: center;
+    font-size: 1rem;
+    font-family: $theme-font-family-body;
+    color: $black-base;
+    transition: none;
+    &:hover {
+      color: $black-base;
+    }
   }
   &__navigation {
     display: flex;
@@ -14,12 +21,16 @@
     font-weight: 500;
     font-size: 1.1rem;
     align-items: center;
-    a {
-      color: $white-base;
+    &__link {
+      color: $black-base;
       margin-left: 2rem;
-      transition: all $transitions-default-duration;
+      font-weight: 900;
+      transition: color $transitions-default-duration;
       &:hover {
-        color: $white-grey;
+        color: $primary-base;
+      }
+      &--active {
+        color: $primary-base;
       }
     }
   }

@@ -1,97 +1,109 @@
 @import 'styles/utils/theme.scss';
 
 .post-list {
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 100;
-  border-radius: $theme-border-radius-default;
-  box-shadow: $shadow-feature-small-default;
-  transition: $transitions-boom-transition;
-  height: 17rem;
-  flex-basis: calc(99.9% * 1 / 3 - 2.5rem);
-  max-width: calc(99.9% * 1 / 3 - 2.5rem);
-  width: calc(99.9% * 1 / 3 - 2.5rem);
-
-  &:hover {
-    box-shadow: $shadow-feature-small-hover;
-    transform: scale(1.04);
-  }
-
-  @media (max-width: 1000px) {
-    flex-basis: calc(99.9% * 1 / 2 - 1rem);
-    max-width: calc(99.9% * 1 / 2 - 1rem);
-    width: calc(99.9% * 1 / 2 - 1rem);
-    height: 18rem;
-  }
-
-  @media (max-width: 700px) {
-    flex-basis: 100%;
-    max-width: 100%;
-    width: 100%;
-    height: 15rem;
-  }
-  &__image {
-    position: absolute;
-    top: 0;
-    overflow: hidden;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    object-fit: cover;
-    border-radius: $theme-border-radius-default;
-    img {
-      border-radius: $theme-border-radius-default;
-    }
-    > div {
-      position: static !important;
-    }
-    > div > div {
-      position: static !important;
-    }
-  }
   &__link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
-    z-index: 3;
-    border-radius: $theme-border-radius-default;
-    &:after {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.3) 50%,
-        rgba(0, 0, 0, 0.7) 80%,
-        rgba(0, 0, 0, 0.8) 100%
-      );
-      z-index: -10;
-      border-radius: $theme-border-radius-default;
-      transition: opacity $transitions-default-duration;
+    color: $black-base;
+    transition: $transition-ease-in-out-cubic $transitions-default-duration;
+    &:hover {
+      color: $black-base;
+      text-shadow: 2px 4px 6px rgba(0,0,0,0.2), 0px -3px 20px rgba(255,255,255,0.4);
     }
     &__info {
-      color: $white-light;
-      margin: 0 1rem 1.25rem 1.25rem;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      &__title {
-        margin-bottom: 0.6rem;
-      }
+      flex: 1 0 0;
     }
   }
+  // margin-bottom: 2rem;
+  // position: relative;
+  // z-index: 100;
+  // border-radius: $theme-border-radius-default;
+  // box-shadow: $shadow-feature-small-default;
+  // transition: $transitions-boom-transition;
+  // height: 17rem;
+  // flex-basis: calc(99.9% * 1 / 3 - 2.5rem);
+  // max-width: calc(99.9% * 1 / 3 - 2.5rem);
+  // width: calc(99.9% * 1 / 3 - 2.5rem);
+
+  // &:hover {
+  //   box-shadow: $shadow-feature-small-hover;
+  //   transform: scale(1.04);
+  // }
+
+  // @media (max-width: 1000px) {
+  //   flex-basis: calc(99.9% * 1 / 2 - 1rem);
+  //   max-width: calc(99.9% * 1 / 2 - 1rem);
+  //   width: calc(99.9% * 1 / 2 - 1rem);
+  //   height: 18rem;
+  // }
+
+  // @media (max-width: 700px) {
+  //   flex-basis: 100%;
+  //   max-width: 100%;
+  //   width: 100%;
+  //   height: 15rem;
+  // }
+  // &__image {
+  //   position: absolute;
+  //   top: 0;
+  //   overflow: hidden;
+  //   right: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   z-index: 1;
+  //   object-fit: cover;
+  //   border-radius: $theme-border-radius-default;
+  //   img {
+  //     border-radius: $theme-border-radius-default;
+  //   }
+  //   > div {
+  //     position: static !important;
+  //   }
+  //   > div > div {
+  //     position: static !important;
+  //   }
+  // }
+  // &__link {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  //   padding: 1rem;
+  //   z-index: 3;
+  //   border-radius: $theme-border-radius-default;
+  //   &:after {
+  //     content: '';
+  //     position: absolute;
+  //     display: block;
+  //     width: 100%;
+  //     height: 100%;
+  //     top: 0;
+  //     left: 0;
+  //     right: 0;
+  //     bottom: 0;
+  //     background: linear-gradient(
+  //       to bottom,
+  //       rgba(0, 0, 0, 0) 0%,
+  //       rgba(0, 0, 0, 0.3) 50%,
+  //       rgba(0, 0, 0, 0.7) 80%,
+  //       rgba(0, 0, 0, 0.8) 100%
+  //     );
+  //     z-index: -10;
+  //     border-radius: $theme-border-radius-default;
+  //     transition: opacity $transitions-default-duration;
+  //   }
+  //   &__info {
+  //     color: $white-light;
+  //     margin: 0 1rem 1.25rem 1.25rem;
+  //     position: absolute;
+  //     bottom: 0;
+  //     left: 0;
+  //     &__title {
+  //       margin-bottom: 0.6rem;
+  //     }
+  //   }
+  // }
 }

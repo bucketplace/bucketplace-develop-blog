@@ -3,16 +3,16 @@ $white-light: #f0f0f0;
 $white-grey: #cecece;
 $white-dark: #a0afd7;
 
-$black-base: #333438;
-$black-light: #4b4e57;
-$black-blue: #2e3246;
+$black-base: #292929;
+$black-light: #757575;
+$black-blue: #052C47;
 
-$primary-base: #3498db;
-$primary-light: #3e5fbc;
-$primary-dark: #284187;
+$primary-base: #35C5F0;
+$primary-light: #6CD5F4;
+$primary-dark: #09ADDB;
 
-$background-light: #3e5fbc;
-$background-dark: #284187;
+$background-light: #35C5F0;
+$background-dark: #09ADDB;
 
 $shadow-card: 0 20px 30px rgba(0, 0, 0, 0.1);
 $shadow-image: 0 15px 25px rgba(0, 0, 0, 0.1);
@@ -38,8 +38,8 @@ $theme-breakpoints-s: 600px;
 $theme-breakpoints-m: 900px;
 $theme-breakpoints-l: 1200px;
 
-$theme-font-family-body: 'Open Sans',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$theme-font-family-heading: Candal, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$theme-font-family-body: 'Noto Sans KR', 'Open Sans',-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$theme-font-family-heading: 'Noto Sans KR', Candal, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 $theme-layout-article: 46rem;
 $theme-layout-base: 70rem;

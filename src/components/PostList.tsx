@@ -21,19 +21,19 @@ const PostList = ({
   excerpt
 }: PostListProps) => (
   <article className='post-list'>
-    <div className='post-list__image'>
-      <Img fluid={cover} />
-    </div>
     <Link
       to={path}
       className='post-list__link'
     >
       <div className='post-list__link__info'>
-        <span>{date}</span>
         <h2 className='post-list__link__info__title'>
           {title}
         </h2>
-        <span>{excerpt}</span>
+        <div>{date}</div>
+        <div>{excerpt}</div>
+      </div>
+      <div className='post-list__image'>
+        <Img fixed={cover} />
       </div>
     </Link>
   </article>

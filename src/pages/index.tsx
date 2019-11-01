@@ -1,37 +1,62 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+
 import { Header, PostList } from 'components';
 import { Layout } from 'layouts';
+
+import BannerCharacter from './banner-character.svg';
 
 import 'styles/pages/index.scss';
 
 interface IndexProps {
   data: {
+    file: {
+      childImageSharp: any;
+    };
     allMarkdownRemark: {
       edges: {
         node: {
-          id: string,
-          excerpt: string,
+          id: string;
+          excerpt: string;
           frontmatter: {
-            cover: any,
-            path: string,
-            title: string,
-            date: string,
-            tags?: string[],
-          },
-        },
-      }[]
-    },
-  },
+            cover: any;
+            path: string;
+            title: string;
+            date: string;
+            tags?: string[];
+          };
+        };
+      }[];
+    };
+  };
 }
 
 const Index = ({ data }: IndexProps) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <Layout>
-      <Helmet title='Home Page' />
-      <Header title='Home Page'>Gatsby Tutorial Starter</Header>
+      <Helmet title='오늘의집 기술 블로그' />
+      <Header
+        className='main__header'
+        innerClassName='main__header__content'
+        contentClassName='main__header__content__wrap'
+      >
+        <>
+          <div className='main__header__content__wrap__title'>
+            누구나 예쁜 집에 살 수 있게 만드는
+            <br />
+            여기는 오늘의집입니다.
+            <a
+              className='main__header__content__wrap__btn'
+              href='http://bucketplace.co.kr/recruit'
+            >
+              채용중인 포지션
+            </a>
+          </div>
+          <BannerCharacter className='main__header__content__character'/>
+        </>
+      </Header>
       <div className='post-wrapper'>
         {edges.map(({ node }) => {
           const { id, excerpt, frontmatter } = node;
@@ -39,7 +64,7 @@ const Index = ({ data }: IndexProps) => {
           return (
             <PostList
               key={id}
-              cover={cover.childImageSharp.fluid}
+              cover={cover.childImageSharp.fixed}
               path={path}
               title={title}
               date={date}
@@ -63,7 +88,7 @@ export const query = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 75)
+          excerpt
           frontmatter {
             title
             path
@@ -71,12 +96,8 @@ export const query = graphql`
             date(formatString: "MM.DD.YYYY")
             cover {
               childImageSharp {
-                fluid(
-                  maxWidth: 1000
-                  quality: 90
-                  traceSVG: { color: "#2B2B2F" }
-                ) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                fixed(width: 200, height: 200) {
+                  ...GatsbyImageSharpFixed
                 }
               }
             }

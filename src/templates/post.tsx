@@ -51,7 +51,7 @@ const Post = ({
 }: PostProps): React.ReactElement => {
   const { next, prev } = pageContext;
   const {html, frontmatter, excerpt } = data.markdownRemark
-  const {date, title, tags, path, description} = frontmatter
+  const { date, title, tags, path, description } = frontmatter
   const image = frontmatter.cover.childImageSharp.fluid;
 
   return (
@@ -63,7 +63,6 @@ const Post = ({
         pathname={path}
         article
       />
-      <Header title={title} date={date} cover={image} />
       <Container>
         <Content input={html} />
         <TagsBlock list={tags || []} />
@@ -105,7 +104,6 @@ export const query = graphql`
             fluid(
               maxWidth: 1920
               quality: 90
-              duotone: { highlight: "#386eee", shadow: "#2323be", opacity: 60 }
             ) {
               ...GatsbyImageSharpFluid_withWebp
             }
