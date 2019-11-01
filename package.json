@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-tutorial-starter",
-  "author": "Justin Formentin",
-  "title": "Gatsby V2 Tutorial Starter",
-  "description": "My Blog",
+  "name": "ohouse-tech-blog",
+  "author": "bucketplace",
+  "title": "ohouse tech blog",
+  "description": "오늘의집을 만들어 나가면서 느낀 점들을 공유하고 발전해나갑니다",
   "homepage": "https://gatsby-tutorial-starter.netlify.com",
   "license": "MIT",
   "version": "0.0.7",

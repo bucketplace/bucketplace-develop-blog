@@ -86,7 +86,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Noto Sans KR']
+          families: ['Noto Sans KR:n4', 'Noto Sans KR:b']
         }
       }
     },
