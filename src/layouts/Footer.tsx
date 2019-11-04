@@ -5,10 +5,7 @@ import 'styles/layouts/Footer.scss';
 const Footer = () => (
   <footer className='wrap'>
     <div className='wrap__content'>
-      <span>
-        Gatsby Tutorial Starter -{' '}
-        <a href="https://justinformentin.com">Justin Formentin</a>
-      </span>
+      <a href="http://bucketplace.co.kr/">Copyright (c) Bucketplace, Inc.</a>
     </div>
   </footer>
 );

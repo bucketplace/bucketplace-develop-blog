@@ -16,6 +16,13 @@
       }
     }
   }
+  &:last-of-type {
+    .post-list__link__info {
+      &--tags {
+        border-bottom: none;
+      }
+    }
+  }
   &__link {
     display: flex;
     color: $black-base;
@@ -31,6 +38,16 @@
         order: 2;
         flex: 1 0 0;
         min-width: 100%;
+      }
+      &--tags {
+        flex: none;
+        margin: 10px auto;
+        border-bottom: 1px solid $white-grey;
+        padding: 15px;
+        @media (max-width: 700px) {
+          flex: none;
+          min-width: auto;
+        }
       }
       &__section, &__title {
         margin: 10px 0;

@@ -1,18 +1,9 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import { Layout, Container, Content } from 'layouts';
 import { TagsBlock, Header, SEO } from 'components';
 import 'styles/templates/post.scss';
-
-const PostSuggestion = ( {
-  children,
-} : {children: React.ReactElement}) => {
-  return (
-    <div className='post-suggestion'>
-      { children }
-    </div>
-  )
-}
 
 interface PostProps {
   pageContext: {
@@ -38,7 +29,8 @@ interface PostProps {
         tags: string[],
         path: string,
         description: string,
-        cover: any,
+        author: string,
+        section: string,
       },
       excerpt: string,
     },
@@ -47,44 +39,71 @@ interface PostProps {
 
 const Post = ({
   data,
-  pageContext,
 }: PostProps): React.ReactElement => {
-  const { next, prev } = pageContext;
-  const {html, frontmatter, excerpt } = data.markdownRemark
-  const { date, title, tags, path, description } = frontmatter
-  const image = frontmatter.cover.childImageSharp.fluid;
-
+  const {
+    html,
+    frontmatter,
+    excerpt
+  } = data.markdownRemark
+  const {
+    date,
+    title,
+    tags,
+    path,
+    description,
+    author,
+    section,
+    cover,
+    disableCoverImage,
+    authorProfileImage
+  } = frontmatter;
+console.log(authorProfileImage);
   return (
     <Layout>
       <SEO
         title={title}
         description={description || excerpt || ' '}
-        banner={image}
+        banner={cover.childImageSharp.fluid}
         pathname={path}
         article
       />
+      <Header
+        className='post__header'
+        innerClassName='post__header__content'
+        contentClassName='post__header__content__wrap'
+      >
+        <>
+          <div className='post__header__content__wrap__title'>
+            { title }
+          </div>
+          { description != null && description != '' && (
+            <div className='post__header__content__wrap__description'>
+              { description }
+            </div>
+          )}
+          <div className='post__header__content__wrap__author'>
+            <Img
+              className='post__header__content__wrap__author__img'
+              fixed={authorProfileImage.childImageSharp.fixed}
+            />
+            <span className='post__header__content__wrap__author__name'>
+              { author }
+            </span>
+          </div>
+          <div className='post__header__content__wrap__explain'>
+            { section }&nbsp;▪︎&nbsp;{date}
+          </div>
+        </>
+      </Header>
       <Container>
-        <Content input={html} />
-        <TagsBlock list={tags || []} />
+        <>
+          {!disableCoverImage && (
+            <Img fluid={cover.childImageSharp.fluid} />
+          )}
+          <Content input={html} />
+          <TagsBlock list={tags || []} />
+        </>
       </Container>
-      <div className='suggestion-bar'>
-        <PostSuggestion>
-          {prev && (
-            <Link to={prev.frontmatter.path}>
-              Previous
-              <h3>{prev.frontmatter.title}</h3>
-            </Link>
-          )}
-        </PostSuggestion>
-        <PostSuggestion>
-          {next && (
-            <Link to={next.frontmatter.path}>
-              Next
-              <h3>{next.frontmatter.title}</h3>
-            </Link>
-          )}
-        </PostSuggestion>
-      </div>
     </Layout>
   );
 };
@@ -96,19 +115,26 @@ export const query = graphql`
     markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
       html
       frontmatter {
-        date
         title
+        path
         tags
+        date(formatString: "YYYY년 MM월 DD일")
+        description
+        published
+        section
+        author
+        disableCoverImage
+        authorProfileImage {
+          childImageSharp {
+            fixed(width: 40, height: 40) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         cover {
           childImageSharp {
-            fluid(
-              maxWidth: 1920
-              quality: 90
-            ) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-            resize(width: 1200, quality: 90) {
-              src
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }

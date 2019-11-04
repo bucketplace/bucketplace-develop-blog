@@ -16,3 +16,33 @@
     color: $black-base;
   }
 }
+
+.post__header {
+  &__content {
+    &__wrap {
+      &__title {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      &__description {
+        font-size: 17px;
+        margin-bottom: 15px;
+      }
+      &__author {
+        display: flex;
+        justify-content: center;
+        line-height: 40px;
+        margin-bottom: 15px;
+        &__img {
+          border-radius: $theme-border-radius-round;
+          overflow: hidden;
+          margin-right: 5px;
+        }
+      }
+      &__explain {
+        color: $black-light;
+      }
+    }
+  }
+}

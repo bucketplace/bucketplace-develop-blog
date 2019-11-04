@@ -2,19 +2,26 @@
 
 .wrap {
   position: relative;
-  padding-top: 2rem;
+  padding-top: 1rem;
   bottom: 0;
   box-shadow: $shadow-footer;
-  background: $gradient-left-to-right;
+  background-color: $white-light;
   font-family: $theme-font-family-body;
   font-weight: 500;
-  @media (max-width: $theme-breakpoints-s) {
-    padding-top: 7rem;
-  }
+  color: $black-base;
   &__content {
-    margin: 0;
-    padding-bottom: 2rem;
-    text-align: center;
-    color: $white-light;
+    max-width: $theme-layout-base;
+    margin: 10px auto 0;
+    padding-bottom: 1.5rem;
+    text-align: left;
+    font-size: 12px;
+    @media (max-width: 700px) {
+      margin: 10px 2rem 0;
+    }
+    a {
+      font-size: 14px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
   }
 }

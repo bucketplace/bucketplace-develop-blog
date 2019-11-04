@@ -1,19 +1,27 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Layout, Container } from 'layouts';
-import { Header } from 'components';
-import title from '../../config/site';
+import { Header, PostList } from 'components';
+import config from '../../config/site';
 import 'styles/templates/tag.scss';
 
 
 interface TagProps {
   pageContext: {
     posts: {
-      frontmatter: {
-        path: string,
-        title: string,
-      }
+      node: {
+        id: string;
+        excerpt: string;
+        frontmatter: {
+          path: string;
+          title: string;
+          date: string;
+          tags?: string[];
+          description?: string,
+          section?: string,
+          author?: string,
+        };
+      },
     }[],
     tagName: string,
   }
@@ -22,27 +30,42 @@ interface TagProps {
 const Tag = ({ pageContext }: TagProps) => {
   const { posts, tagName } = pageContext;
   const upperTag = tagName.charAt(0).toUpperCase() + tagName.slice(1);
+  console.log(pageContext);
+
   return (
     <Layout>
-      <Helmet title={`${tagName} | ${title}`} />
-      <Header title={upperTag}>
-        <Link
-          className='tag-link'
-          to="/tags"
-        >
-            All Tags
-        </Link>
-      </Header>
+      <Helmet title={`#${tagName} | ${config.title}`} />
+      <Header title={`#${upperTag}`} />
       <Container>
         <div className='information'>
-          {posts.map((post, index) => (
-            <Link
-              key={index}
-              to={post.frontmatter.path}
-            >
-              <h3>{post.frontmatter.title}</h3>
-            </Link>
-          ))}
+          {posts.map(({ node }) => {
+            const { id, excerpt, frontmatter } = node;
+            const {
+              cover,
+              path,
+              title,
+              date,
+              description,
+              section,
+              author,
+            } = frontmatter;
+            console.log(cover);
+            return (
+              <PostList
+                key={id}
+                path={path}
+                title={title}
+                date={date}
+                excerpt={(
+                  description != null &&
+                  description != '' ?
+                    description : excerpt
+                )}
+                section={section}
+                author={author}
+                isTagItem
+              />
+            )})}
         </div>
       </Container>
     </Layout>

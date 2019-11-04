@@ -1,11 +1,12 @@
 const path = require('path');
+const Img = require('gatsby-image');
+
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve('src/templates/post.tsx');
-    const tagPage = path.resolve('src/pages/tags.tsx');
     const tagPosts = path.resolve('src/templates/tag.tsx');
 
     resolve(
@@ -18,9 +19,14 @@ exports.createPages = ({ graphql, actions }) => {
               edges {
                 node {
                   frontmatter {
-                    path
                     title
+                    path
                     tags
+                    date(formatString: "YYYY년 MM월 DD일")
+                    description
+                    published
+                    section
+                    author
                   }
                 }
               }
@@ -36,27 +42,20 @@ exports.createPages = ({ graphql, actions }) => {
 
         const postsByTag = {};
         // create tags page
-        posts.forEach(({ node }) => {
+        posts.forEach(( post ) => {
+          const { node } = post;
           if (node.frontmatter.tags) {
             node.frontmatter.tags.forEach(tag => {
               if (!postsByTag[tag]) {
                 postsByTag[tag] = [];
               }
 
-              postsByTag[tag].push(node);
+              postsByTag[tag].push(post);
             });
           }
         });
 
         const tags = Object.keys(postsByTag);
-
-        createPage({
-          path: '/tags',
-          component: tagPage,
-          context: {
-            tags: tags.sort(),
-          },
-        });
 
         //create tags
         tags.forEach(tagName => {

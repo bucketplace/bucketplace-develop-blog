@@ -33,14 +33,14 @@ body {
   }
 
   a {
-    color: $white-base;
+    color: $black-base;
     transition: color 0.5s;
     text-decoration: none;
   }
 
   a:hover {
     text-decoration: none;
-    color: $white-light;
+    color: $black-light;
   }
 
   * {
