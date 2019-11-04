@@ -97,6 +97,15 @@ module.exports = {
         sitemap: 'https://dev.ozip.me/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
+    },
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          require('autoprefixer'),
+          require('postcss-flexbugs-fixes'),
+        ]
+      }
     }
   ],
 };

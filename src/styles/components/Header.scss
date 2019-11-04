@@ -8,9 +8,6 @@
   @media (max-width: $theme-breakpoints-s) {
     height: 275px;
   }
-  @media (max-width: $theme-breakpoints-xs) {
-    height: 350px;
-  }
   position: relative;
   overflow: hidden;
   &__content {

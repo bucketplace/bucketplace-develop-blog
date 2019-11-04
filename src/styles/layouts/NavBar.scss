@@ -4,7 +4,7 @@
 .headroom {
   &__link {
     display: flex;
-    font-weight: 700;
+    font-weight: bold;
     align-items: center;
     font-size: 1rem;
     font-family: $theme-font-family-body;
@@ -12,6 +12,14 @@
     transition: none;
     &:hover {
       color: $black-base;
+    }
+    @media (max-width: $theme-breakpoints-xs) {
+      font-size: 0.85rem;
+    }
+    svg {
+      @media (max-width: $theme-breakpoints-xs) {
+        height: 2rem;
+      }
     }
   }
   &__navigation {
@@ -21,16 +29,22 @@
     font-weight: 500;
     font-size: 1.1rem;
     align-items: center;
+    @media (max-width: $theme-breakpoints-xs) {
+      font-size: 0.85rem;
+    }
     &__link {
       color: $black-base;
       margin-left: 2rem;
-      font-weight: 900;
+      font-weight: bold;
       transition: color $transitions-default-duration;
       &:hover {
         color: $primary-base;
       }
       &--active {
         color: $primary-base;
+      }
+      @media (max-width: $theme-breakpoints-xs) {
+        margin-left: 1rem;
       }
     }
   }

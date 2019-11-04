@@ -18,8 +18,14 @@
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
     "start": "npm run develop",
     "type-check": "tsc --noEmit",
-    "lint": "tslint --project ."
+    "lint": "tslint --project .",
+    "browserslist": "browserslist"
   },
+  "browserslist": [
+    "last 2 version",
+    "android >= 4.1",
+    "IE >= 10"
+  ],
   "dependencies": {
     "@babel/core": "^7.6.0",
     "@emotion/core": "^10.0.17",
@@ -37,6 +43,7 @@
     "gatsby-plugin-google-analytics": "^2.1.14",
     "gatsby-plugin-manifest": "^2.2.14",
     "gatsby-plugin-offline": "^2.2.10",
+    "gatsby-plugin-postcss": "^2.1.13",
     "gatsby-plugin-react-helmet": "^3.1.6",
     "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-robots-txt": "^1.5.0",
@@ -69,7 +76,9 @@
   "devDependencies": {
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
+    "autoprefixer": "^9.7.1",
     "babel-eslint": "^10.0.3",
+    "browserslist": "^4.7.2",
     "eslint": "^6.6.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -77,6 +86,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "gatsby-plugin-eslint": "^2.0.5",
     "lighthouse": "^3.2.1",
+    "postcss-flexbugs-fixes": "^4.1.0",
     "tslint": "^5.20.0",
     "tslint-loader": "^3.5.4",
     "tslint-react": "^4.1.0"

@@ -10,7 +10,9 @@
 
 .headroom {
   padding: 1rem 1.5rem;
-
+  @media (max-width: $theme-breakpoints-xs) {
+    padding: 0;
+  }
   &__wrap {
     display: flex;
     justify-content: space-between;
@@ -30,6 +32,13 @@
   position: relative;
   transform: translateY(0);
   transition: $transitions-headroom-transition;
+
+  &>.headroom__wrap {
+    padding: 0.75rem 0;
+    @media (max-width: $theme-breakpoints-xs) {
+      padding: 0.75rem;
+    }
+  }
 }
 
 .headroom--scrolled {
@@ -45,6 +54,9 @@
 
   &>.headroom__wrap {
     padding: 0.75rem 0;
+    @media (max-width: $theme-breakpoints-xs) {
+      padding: 0.75rem;
+    }
   }
 }
 
@@ -58,20 +70,8 @@
 
   &>.headroom__wrap {
     padding: 0.75rem 0;
-  }
-
-  nav {
-    a {
-      color: $black-base;
-
-      &:hover {
-        border-color: $black-base;
-        color: $black-base;
-      }
-
-      &:focus {
-        color: $black-base;
-      }
+    @media (max-width: $theme-breakpoints-xs) {
+      padding: 0.75rem;
     }
   }
 

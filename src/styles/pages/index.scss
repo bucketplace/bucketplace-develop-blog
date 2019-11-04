@@ -46,7 +46,7 @@
           margin: auto 0 60px;
         }
         @media (max-width: $theme-breakpoints-s) {
-          margin: auto 0 30px;
+          margin: auto 0 25px;
         }
 
         &__title {
@@ -104,7 +104,7 @@
         }
         @media (max-width: $theme-breakpoints-xs) {
           width: 120px;
-          top: 30%;
+          top: 15%;
           left: 0;
           right: 0;
           margin: 0 auto;
