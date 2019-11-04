@@ -1,16 +1,82 @@
 @import 'styles/utils/theme.scss';
 
 .post-list {
+  @media (max-width: 425px) {
+    margin-bottom: 30px;
+  }
+  &:hover {
+    .post-list {
+      &__link {
+        color: $black-base;
+      }
+      &__image {
+        &__content {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
   &__link {
     display: flex;
     color: $black-base;
-    transition: $transition-ease-in-out-cubic $transitions-default-duration;
-    &:hover {
-      color: $black-base;
-      text-shadow: 2px 4px 6px rgba(0,0,0,0.2), 0px -3px 20px rgba(255,255,255,0.4);
+    transition: $transition-ease-in-out-cubic .25s;
+    min-height: 220px;
+    align-items: center;
+    @media (max-width: 425px) {
+      flex-wrap: wrap;
     }
     &__info {
+      flex: 3 0 0;
+      @media (max-width: 425px) {
+        order: 2;
+        flex: 1 0 0;
+        min-width: 100%;
+      }
+      &__section, &__title {
+        margin: 10px 0;
+      }
+      &__excerpt {
+        margin: 15px 0 0;
+        height: 70px;
+        overflow: hidden;
+      }
+      &__explain {
+        display: flex;
+        line-height: 40px;
+        color: $black-light;
+        &__author-profile {
+          border-radius: $theme-border-radius-round;
+          margin-right: 10px;
+          transition: $transition-ease-in-out-cubic .25s;
+        }
+        &__author {
+          color: $black-base;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  &__image {
+    position: relative;
+    flex: 1 0 0;
+    min-width: 200px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 4px;
+    @media (max-width: 425px) {
+      order: 1;
       flex: 1 0 0;
+      min-width: 100%;
+    }
+    &__content {
+      position: absolute !important;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform .25s $transition-ease-in-out-cubic;
     }
   }
   // margin-bottom: 2rem;
@@ -93,7 +159,7 @@
   //     );
   //     z-index: -10;
   //     border-radius: $theme-border-radius-default;
-  //     transition: opacity $transitions-default-duration;
+  //     transition: opacity .25s;
   //   }
   //   &__info {
   //     color: $white-light;

@@ -9,7 +9,7 @@
 }
 
 .headroom {
-  padding: 1rem 1.5rem;
+  padding: 0 1.5rem;
   @media (max-width: $theme-breakpoints-xs) {
     padding: 0;
   }
@@ -74,8 +74,6 @@
       padding: 0.75rem;
     }
   }
-
-  padding: 0;
 
   svg {
     height: 2.5rem;

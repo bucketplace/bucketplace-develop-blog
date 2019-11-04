@@ -21,10 +21,14 @@ interface IndexProps {
           excerpt: string;
           frontmatter: {
             cover: any;
+            authorProfileImage?: any;
             path: string;
             title: string;
             date: string;
             tags?: string[];
+            description?: string,
+            section?: string,
+            author?: string,
           };
         };
       }[];
@@ -60,15 +64,31 @@ const Index = ({ data }: IndexProps) => {
       <div className='post-wrapper'>
         {edges.map(({ node }) => {
           const { id, excerpt, frontmatter } = node;
-          const { cover, path, title, date } = frontmatter;
+          const {
+            cover,
+            path,
+            title,
+            date,
+            description,
+            section,
+            author,
+            authorProfileImage,
+          } = frontmatter;
           return (
             <PostList
               key={id}
-              cover={cover.childImageSharp.fixed}
+              cover={cover.childImageSharp.fluid}
               path={path}
               title={title}
               date={date}
-              excerpt={excerpt}
+              excerpt={(
+                description != null &&
+                description != '' ?
+                  description : excerpt
+              )}
+              section={section}
+              author={author}
+              authorProfileImage={authorProfileImage.childImageSharp.fixed}
             />
           );
         })}
@@ -82,7 +102,6 @@ export default Index;
 export const query = graphql`
   query {
     allMarkdownRemark(
-      limit: 6
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
@@ -93,10 +112,21 @@ export const query = graphql`
             title
             path
             tags
-            date(formatString: "MM.DD.YYYY")
+            date(formatString: "YYYY년 MM월 DD일")
+            description
+            published
+            section
+            author
             cover {
               childImageSharp {
-                fixed(width: 200, height: 200) {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            authorProfileImage {
+              childImageSharp {
+                fixed(width: 40, height: 40) {
                   ...GatsbyImageSharpFixed
                 }
               }

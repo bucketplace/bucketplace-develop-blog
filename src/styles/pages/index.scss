@@ -1,7 +1,7 @@
 @import 'styles/utils/theme.scss';
 
 .post-wrapper {
-  width: 70rem;
+  width: 60rem;
   justify-content: space-between;
   margin: 4rem auto 1rem;
 
@@ -94,7 +94,7 @@
       }
       &__character {
         position: absolute;
-        right: 50px;
+        right: 0;
         max-width: 400px;
         width: 50%;
         bottom: -25%;
