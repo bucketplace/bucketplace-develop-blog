@@ -40,10 +40,10 @@
       bottom: 0;
 
       &__wrap {
-        margin: auto 0 80px;
+        margin: auto auto 80px 0;
         z-index: 1;
         @media (max-width: 900px) {
-          margin: auto 0 60px;
+          margin: auto auto 60px 0;
         }
         @media (max-width: $theme-breakpoints-s) {
           margin: auto 0 25px;
