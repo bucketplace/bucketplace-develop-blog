@@ -43,6 +43,9 @@
         @media (max-width: $theme-breakpoints-s) {
           margin: auto auto 25px 0;
         }
+        @media (max-width: $theme-breakpoints-xs) {
+          margin: auto 0 25px 0;
+        }
 
         &__title {
           position: relative;
