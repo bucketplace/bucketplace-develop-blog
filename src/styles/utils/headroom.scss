@@ -23,7 +23,7 @@
 
   svg {
     height: 2.5rem;
-    min-width: 114px;
+    width: 114px;
     margin-right: 10px;
   }
 }
@@ -79,10 +79,10 @@
 
   svg {
     height: 2.5rem;
-    min-width: 114px;
+    width: 114px;
     margin-right: 10px;
     @media (max-width: $theme-breakpoints-xs) {
-      min-width: 93px;
+      max-width: 93px;
     }
   }
 

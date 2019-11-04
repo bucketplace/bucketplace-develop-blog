@@ -10,6 +10,7 @@
     font-family: $theme-font-family-body;
     color: $black-base;
     transition: none;
+    flex: 1 0px 0px;
     &:hover {
       color: $black-base;
     }
@@ -18,7 +19,7 @@
     }
     svg {
       @media (max-width: $theme-breakpoints-xs) {
-        min-width: 93px;
+        max-width: 93px;
         height: 2rem;
       }
     }
