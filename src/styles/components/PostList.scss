@@ -39,6 +39,10 @@
         margin: 15px 0 0;
         height: 70px;
         overflow: hidden;
+        @media (max-width: 700px) {
+          margin: 15px 0;
+          height: auto;
+        }
       }
       &__explain {
         display: flex;
