@@ -1,18 +1,13 @@
 @import 'styles/utils/theme.scss';
 
 .post-wrapper {
-  width: 60rem;
+  max-width: $theme-layout-base + 4rem;
   justify-content: space-between;
   margin: 4rem auto 1rem;
-
-  @media (max-width: 72rem) {
-    margin: 4rem auto 1rem;
-    width: 768px;
-  }
+  padding: 0 2rem;
 
   @media (max-width: 850px) {
-    width: auto;
-    margin: 4rem 1rem 1rem 1rem;
+    margin: 4rem auto 4rem auto;
   }
 }
 
@@ -46,7 +41,7 @@
           margin: auto auto 60px 0;
         }
         @media (max-width: $theme-breakpoints-s) {
-          margin: auto 0 25px;
+          margin: auto auto 25px 0;
         }
 
         &__title {

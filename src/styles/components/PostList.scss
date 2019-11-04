@@ -1,7 +1,7 @@
 @import 'styles/utils/theme.scss';
 
 .post-list {
-  @media (max-width: 425px) {
+  @media (max-width: 700px) {
     margin-bottom: 30px;
   }
   &:hover {
@@ -22,12 +22,12 @@
     transition: $transition-ease-in-out-cubic .25s;
     min-height: 220px;
     align-items: center;
-    @media (max-width: 425px) {
+    @media (max-width: 700px) {
       flex-wrap: wrap;
     }
     &__info {
       flex: 3 0 0;
-      @media (max-width: 425px) {
+      @media (max-width: 700px) {
         order: 2;
         flex: 1 0 0;
         min-width: 100%;
@@ -63,7 +63,7 @@
     height: 180px;
     overflow: hidden;
     border-radius: 4px;
-    @media (max-width: 425px) {
+    @media (max-width: 700px) {
       order: 1;
       flex: 1 0 0;
       min-width: 100%;
