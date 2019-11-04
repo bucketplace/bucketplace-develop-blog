@@ -1,9 +1,9 @@
 ---
-path: "/post-one"
+path: "/post-6"
 cover: "./cover.jpg"
 date: "2019-10-31"
 section: '이야기'
-title: "첫번째 이야기"
+title: "6번째 이야기"
 description: '뭐라고? 개발자를 구한다고?'
 author: 'bucketplace'
 authorProfileImage: './Ohouse_profile.png'
