@@ -23,6 +23,7 @@
 
   svg {
     height: 2.5rem;
+    min-width: 114px;
     margin-right: 10px;
   }
 }
@@ -78,8 +79,11 @@
 
   svg {
     height: 2.5rem;
-    width: auto;
+    min-width: 114px;
     margin-right: 10px;
+    @media (max-width: $theme-breakpoints-xs) {
+      min-width: 93px;
+    }
   }
 
   span {

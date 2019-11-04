@@ -18,6 +18,7 @@
     }
     svg {
       @media (max-width: $theme-breakpoints-xs) {
+        min-width: 93px;
         height: 2rem;
       }
     }
