@@ -30,7 +30,6 @@ interface TagProps {
 const Tag = ({ pageContext }: TagProps) => {
   const { posts, tagName } = pageContext;
   const upperTag = tagName.charAt(0).toUpperCase() + tagName.slice(1);
-  console.log(pageContext);
 
   return (
     <Layout>

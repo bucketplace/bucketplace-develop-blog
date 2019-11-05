@@ -60,13 +60,16 @@ const Post = ({
     disableCoverImage,
     authorProfileImage
   } = frontmatter;
-console.log(authorProfileImage);
   return (
     <Layout>
       <SEO
         title={title}
-        description={description || excerpt || ' '}
-        banner={cover.childImageSharp.fluid}
+        description={(
+          description != null ? (
+            description
+          ) : excerpt
+        )}
+        banner={cover.childImageSharp.fluid.src}
         pathname={path}
         article
       />
