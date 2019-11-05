@@ -29,6 +29,7 @@ interface IndexProps {
             description?: string,
             section?: string,
             author?: string,
+            published: boolean,
           };
         };
       }[];
@@ -73,7 +74,9 @@ const Index = ({ data }: IndexProps) => {
             section,
             author,
             authorProfileImage,
+            published,
           } = frontmatter;
+          if (!published) return null;
           return (
             <PostList
               key={id}

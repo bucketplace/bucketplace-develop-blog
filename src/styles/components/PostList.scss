@@ -4,11 +4,13 @@
   @media (max-width: 700px) {
     margin-bottom: 30px;
   }
+
   &:hover {
     .post-list {
       &__link {
         color: $black-base;
       }
+
       &__image {
         &__content {
           transform: scale(1.1);
@@ -16,6 +18,7 @@
       }
     }
   }
+
   &:last-of-type {
     .post-list__link__info {
       &--tags {
@@ -23,53 +26,66 @@
       }
     }
   }
+
   &__link {
     display: flex;
     color: $black-base;
     transition: $transition-ease-in-out-cubic .25s;
     min-height: 220px;
     align-items: center;
+
     @media (max-width: 700px) {
       flex-wrap: wrap;
     }
+
     &__info {
       flex: 3 0 0;
+
       @media (max-width: 700px) {
         order: 2;
         flex: 1 0 0;
         min-width: 100%;
       }
+
       &--tags {
         flex: none;
         margin: 10px auto;
         border-bottom: 1px solid $white-grey;
         padding: 15px;
+
         @media (max-width: 700px) {
           flex: none;
           min-width: auto;
         }
       }
-      &__section, &__title {
+
+      &__section,
+      &__title {
         margin: 10px 0;
       }
+
       &__excerpt {
         margin: 15px 0 0;
         height: 70px;
         overflow: hidden;
+
         @media (max-width: 700px) {
           margin: 15px 0;
           height: auto;
         }
       }
+
       &__explain {
         display: flex;
         line-height: 40px;
         color: $black-light;
+
         &__author-profile {
           border-radius: $theme-border-radius-round;
           margin-right: 10px;
           transition: $transition-ease-in-out-cubic .25s;
         }
+
         &__author {
           color: $black-base;
           font-weight: bold;
@@ -77,18 +93,21 @@
       }
     }
   }
+
   &__image {
     position: relative;
     flex: 1 0 0;
-    min-width: 200px;
+    min-width: 250px;
     height: 180px;
     overflow: hidden;
     border-radius: 4px;
+
     @media (max-width: 700px) {
       order: 1;
       flex: 1 0 0;
       min-width: 100%;
     }
+
     &__content {
       position: absolute !important;
       top: 0;
@@ -100,97 +119,4 @@
       transition: transform .25s $transition-ease-in-out-cubic;
     }
   }
-  // margin-bottom: 2rem;
-  // position: relative;
-  // z-index: 100;
-  // border-radius: $theme-border-radius-default;
-  // box-shadow: $shadow-feature-small-default;
-  // transition: $transitions-boom-transition;
-  // height: 17rem;
-  // flex-basis: calc(99.9% * 1 / 3 - 2.5rem);
-  // max-width: calc(99.9% * 1 / 3 - 2.5rem);
-  // width: calc(99.9% * 1 / 3 - 2.5rem);
-
-  // &:hover {
-  //   box-shadow: $shadow-feature-small-hover;
-  //   transform: scale(1.04);
-  // }
-
-  // @media (max-width: 1000px) {
-  //   flex-basis: calc(99.9% * 1 / 2 - 1rem);
-  //   max-width: calc(99.9% * 1 / 2 - 1rem);
-  //   width: calc(99.9% * 1 / 2 - 1rem);
-  //   height: 18rem;
-  // }
-
-  // @media (max-width: 700px) {
-  //   flex-basis: 100%;
-  //   max-width: 100%;
-  //   width: 100%;
-  //   height: 15rem;
-  // }
-  // &__image {
-  //   position: absolute;
-  //   top: 0;
-  //   overflow: hidden;
-  //   right: 0;
-  //   left: 0;
-  //   bottom: 0;
-  //   z-index: 1;
-  //   object-fit: cover;
-  //   border-radius: $theme-border-radius-default;
-  //   img {
-  //     border-radius: $theme-border-radius-default;
-  //   }
-  //   > div {
-  //     position: static !important;
-  //   }
-  //   > div > div {
-  //     position: static !important;
-  //   }
-  // }
-  // &__link {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: space-between;
-  //   padding: 1rem;
-  //   z-index: 3;
-  //   border-radius: $theme-border-radius-default;
-  //   &:after {
-  //     content: '';
-  //     position: absolute;
-  //     display: block;
-  //     width: 100%;
-  //     height: 100%;
-  //     top: 0;
-  //     left: 0;
-  //     right: 0;
-  //     bottom: 0;
-  //     background: linear-gradient(
-  //       to bottom,
-  //       rgba(0, 0, 0, 0) 0%,
-  //       rgba(0, 0, 0, 0.3) 50%,
-  //       rgba(0, 0, 0, 0.7) 80%,
-  //       rgba(0, 0, 0, 0.8) 100%
-  //     );
-  //     z-index: -10;
-  //     border-radius: $theme-border-radius-default;
-  //     transition: opacity .25s;
-  //   }
-  //   &__info {
-  //     color: $white-light;
-  //     margin: 0 1rem 1.25rem 1.25rem;
-  //     position: absolute;
-  //     bottom: 0;
-  //     left: 0;
-  //     &__title {
-  //       margin-bottom: 0.6rem;
-  //     }
-  //   }
-  // }
 }

@@ -3,15 +3,12 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true,
+    "es6": true
   },
   "rules": {
     "strict": 0,
     "no-console": "warn",
-    "quotes": [
-      "warn",
-      "single"
-    ],
+    "quotes": [2, "single", { "avoidEscape": true }],
     "no-unused-vars": [
       1
     ],
@@ -20,15 +17,19 @@
       {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
-    ],
-    "prettier/prettier": ["warn", "error", {
-     "endOfLine":"auto"
-   }]
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "16.8.0"
+    }
   },
   "extends": [
     "eslint:recommended",
+    "google",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "prettier"
   ],
   "plugins": ["prettier", "jsx-a11y"]
 }

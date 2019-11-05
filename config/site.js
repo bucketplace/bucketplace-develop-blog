@@ -10,9 +10,9 @@ module.exports = {
   banner: 'static/logo/banner.png',
   // JSONLD / Manifest
   favicon: 'static/logo/favicon.png', // Used for manifest favicon generation
-  shortName: 'DevBucketPlace', // shortname for manifest. MUST be shorter than 12 characters
-  author: 'BucketPlace', // Author for schemaORGJSONLD
-  themeColor: '#3e7bf2',
-  backgroundColor: '#d3e0ff',
-  twitter: '@justinformentin', // Twitter Username
+  shortName: '오늘의집 기술블로그', // shortname for manifest. MUST be shorter than 12 characters
+  author: '버킷플레이스', // Author for schemaORGJSONLD
+  themeColor: '#35C5F0',
+  backgroundColor: '#cecece',
+  twitter: '@todayinterior', // Twitter Username
 };
