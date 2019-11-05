@@ -20,13 +20,12 @@ const NavBar = () => (
         기술 블로그
       </Link>
       <nav className='headroom__navigation'>
-        <Link
-          to='/about'
+        <a
+          href='http://bucketplace.co.kr/brand-story'
           className='headroom__navigation__link'
-          activeClassName='headroom__navigation__link--active'
         >
           소개
-        </Link>
+        </a>
         <Link
           to='/'
           className='headroom__navigation__link'
