@@ -10,6 +10,10 @@
   }
   position: relative;
   overflow: hidden;
+  @media (prefers-color-scheme: dark) {
+    background-color: $black-light;
+    color: $white-light;
+  }
   &__content {
     z-index: 0;
     position: absolute;
@@ -30,5 +34,8 @@
     max-width: 650px;
     color: $black-base;
     font-family: $theme-font-family-body;
+    @media (prefers-color-scheme: dark) {
+      color: $white-light;
+    }
   }
 }
