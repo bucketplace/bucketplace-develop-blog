@@ -8,7 +8,9 @@
   background-color: $white-light;
   font-family: $theme-font-family-body;
   font-weight: 500;
-  color: $black-base;
+  @media (prefers-color-scheme: dark) {
+    background-color: $black-base;
+  }
   &__content {
     max-width: $theme-layout-base;
     margin: 10px auto 0;

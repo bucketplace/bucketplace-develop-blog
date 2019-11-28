@@ -25,6 +25,11 @@
     height: 2.5rem;
     width: 114px;
     margin-right: 10px;
+    > g > g  {
+      @media (prefers-color-scheme: dark) {
+        fill: $white-light !important;
+      }
+    }
   }
 }
 
@@ -68,6 +73,10 @@
   width: 100%;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
 
+  @media (prefers-color-scheme: dark) {
+    background-color: $black-light;
+  }
+
   &>.headroom__wrap {
     padding: 0.75rem 0;
     @media (max-width: $theme-breakpoints-xs) {
@@ -86,5 +95,8 @@
 
   span {
     color: $black-base;
+    @media (prefers-color-scheme: dark) {
+      color: $white-light;
+    }
   }
 }

@@ -29,7 +29,6 @@
 
   &__link {
     display: flex;
-    color: $black-base;
     transition: $transition-ease-in-out-cubic .25s;
     min-height: 220px;
     align-items: center;
@@ -80,6 +79,9 @@
         line-height: 40px;
         color: $black-light;
 
+        @media (prefers-color-scheme: dark) {
+          color: $white-light;
+        }
         &__author-profile {
           border-radius: $theme-border-radius-round;
           margin-right: 10px;
@@ -87,7 +89,6 @@
         }
 
         &__author {
-          color: $black-base;
           font-weight: bold;
         }
       }

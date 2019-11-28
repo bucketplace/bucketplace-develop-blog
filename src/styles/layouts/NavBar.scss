@@ -11,8 +11,14 @@
     color: $black-base;
     transition: none;
     flex: 1 0px 0px;
+    @media (prefers-color-scheme: dark) {
+      color: $white-base;
+    }
     &:hover {
       color: $black-base;
+      @media (prefers-color-scheme: dark) {
+        color: $white-light;
+      }
     }
     @media (max-width: $theme-breakpoints-xs) {
       font-size: 0.85rem;
@@ -39,6 +45,9 @@
       margin-left: 2rem;
       font-weight: bold;
       transition: color $transitions-default-duration;
+      @media (prefers-color-scheme: dark) {
+        color: $white-base;
+      }
       &:hover {
         color: $primary-base;
       }
