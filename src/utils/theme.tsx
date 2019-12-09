@@ -3,7 +3,6 @@ import {
   createContext,
   useState,
   useEffect,
-  useCallback,
 } from 'react';
 import classNames from 'classnames';
 
@@ -38,7 +37,7 @@ export const DarkModeProvider = ({
   const initState = {
     theme: (
       localStorage.getItem('theme') == null ?
-        window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches :
+        window != null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches :
         localStorage.getItem('theme') === 'true'),
     toggleTheme,
   }
@@ -53,7 +52,7 @@ export const DarkModeProvider = ({
       setTheme((beforeState) => {
         return {
           ...beforeState,
-          theme: window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
+          theme: window != null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
         }
       });
       localStorage.setItem('theme', theme.theme ? 'true' : 'false');
