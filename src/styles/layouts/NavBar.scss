@@ -11,12 +11,12 @@
     color: $black-base;
     transition: none;
     flex: 1 0px 0px;
-    @media (prefers-color-scheme: dark) {
+    &--dark {
       color: $white-base;
     }
     &:hover {
       color: $black-base;
-      @media (prefers-color-scheme: dark) {
+      &--dark {
         color: $white-light;
       }
     }
@@ -45,13 +45,13 @@
       margin-left: 2rem;
       font-weight: bold;
       transition: color $transitions-default-duration;
-      @media (prefers-color-scheme: dark) {
+      &--dark {
         color: $white-base;
       }
       &:hover {
         color: $primary-base;
       }
-      &--active {
+      .layout--dark a &--active{
         color: $primary-base;
       }
       @media (max-width: $theme-breakpoints-xs) {

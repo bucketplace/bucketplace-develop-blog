@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import classNames from 'classnames';
+
+import DarkModeContext from 'utils/theme';
 
 import 'styles/components/PostList.scss';
 
@@ -28,49 +30,60 @@ const PostList = ({
   author,
   authorProfileImage,
   isTagItem,
-}: PostListProps) => (
-  <article className='post-list'>
-    <Link
-      to={path}
-      className='post-list__link'
+}: PostListProps) => {
+  const { getDarkThemeClassName } = useContext(DarkModeContext);
+  return (
+    <article
+      className={
+        getDarkThemeClassName('post-list')
+      }
     >
-      <div className={classNames(
-        'post-list__link__info',
-        {
-          'post-list__link__info--tags': isTagItem,
-        }
-      )}>
-        <div className='post-list__link__info__section'>
-          { section }
+      <Link
+        to={path}
+        className='post-list__link'
+      >
+        <div className={classNames(
+          'post-list__link__info',
+          {
+            'post-list__link__info--tags': isTagItem,
+          }
+        )}>
+          <div className='post-list__link__info__section'>
+            { section }
+          </div>
+          <h2 className='post-list__link__info__title'>
+            { title }
+          </h2>
+          <div className='post-list__link__info__excerpt'>
+            { excerpt }
+          </div>
+          <div
+            className={getDarkThemeClassName(
+              'post-list__link__info__explain'
+            )}
+          >
+            {authorProfileImage && (
+              <Img
+                className='post-list__link__info__explain__author-profile'
+                fixed={authorProfileImage}
+              />
+            )}
+            <span className='post-list__link__info__explain__author'>
+              { author }
+            </span>&nbsp;▪︎&nbsp;{date}
+          </div>
         </div>
-        <h2 className='post-list__link__info__title'>
-          { title }
-        </h2>
-        <div className='post-list__link__info__excerpt'>
-          { excerpt }
-        </div>
-        <div className='post-list__link__info__explain'>
-          {authorProfileImage && (
+        {cover && (
+          <div className='post-list__image'>
             <Img
-              className='post-list__link__info__explain__author-profile'
-              fixed={authorProfileImage}
+              className='post-list__image__content'
+              fluid={cover}
             />
-          )}
-          <span className='post-list__link__info__explain__author'>
-            { author }
-          </span>&nbsp;▪︎&nbsp;{date}
-        </div>
-      </div>
-      {cover && (
-        <div className='post-list__image'>
-          <Img
-            className='post-list__image__content'
-            fluid={cover}
-          />
-        </div>
-      )}
-    </Link>
-  </article>
-);
+          </div>
+        )}
+      </Link>
+    </article>
+  );
+}
 
 export default PostList;

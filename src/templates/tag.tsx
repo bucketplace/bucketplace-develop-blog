@@ -30,7 +30,6 @@ interface TagProps {
 const Tag = ({ pageContext }: TagProps) => {
   const { posts, tagName } = pageContext;
   const upperTag = tagName.charAt(0).toUpperCase() + tagName.slice(1);
-  console.log(pageContext);
 
   return (
     <Layout>
@@ -41,7 +40,6 @@ const Tag = ({ pageContext }: TagProps) => {
           {posts.map(({ node }) => {
             const { id, excerpt, frontmatter } = node;
             const {
-              cover,
               path,
               title,
               date,
@@ -49,7 +47,6 @@ const Tag = ({ pageContext }: TagProps) => {
               section,
               author,
             } = frontmatter;
-            console.log(cover);
             return (
               <PostList
                 key={id}

@@ -8,7 +8,7 @@
   background-color: $white-light;
   font-family: $theme-font-family-body;
   font-weight: 500;
-  @media (prefers-color-scheme: dark) {
+  &--dark {
     background-color: $black-base;
   }
   &__content {

@@ -8,7 +8,7 @@ description: '뭐라고? 개발자를 구한다고?'
 author: 'bucketplace'
 authorProfileImage: './Ohouse_profile.png'
 tags: ['버킷플레이스', '채용']
-published: true
+published: false
 
 ---
 # 새로운 팀원을 환영하는 방법 
