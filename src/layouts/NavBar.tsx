@@ -9,7 +9,7 @@ import DarkModeContext from 'utils/theme';
 import 'styles/layouts/NavBar.scss';
 
 const NavBar = () => {
-  const { theme, toggleTheme, getDarkThemeClassName } = useContext(DarkModeContext);
+  const { getDarkThemeClassName } = useContext(DarkModeContext);
 
   return (
     <Headroom calcHeightOnResize disableInlineStyles>
