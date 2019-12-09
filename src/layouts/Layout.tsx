@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import 'typeface-open-sans';
 import 'typeface-candal';
 import { SEO } from 'components';
-import { NavBar, Footer } from 'layouts';
+import { NavBar, Footer, ToggleButton } from 'layouts';
 import DarkModeContext, { DarkModeProvider } from 'utils/theme';
 
 import 'styles/layouts/Layout.scss';
@@ -25,6 +25,7 @@ const Content = ({ children }: { children: React.ReactNode }) => {
       <SEO />
       <NavBar />
       {children}
+      <ToggleButton />
       <Footer />
     </div>
   )

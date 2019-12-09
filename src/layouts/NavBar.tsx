@@ -28,6 +28,7 @@ const NavBar = () => {
           <a
             href='http://bucketplace.co.kr/brand-story'
             className={getDarkThemeClassName('headroom__navigation__link')}
+            target="self"
           >
             소개
           </a>
@@ -38,12 +39,6 @@ const NavBar = () => {
           >
             블로그
           </Link>
-          <span
-            className={getDarkThemeClassName('headroom__navigation__link')}
-            onClick={() => toggleTheme()}
-          >
-            다크모드 {theme ? 'on' : 'off'}
-          </span>
         </nav>
       </div>
     </Headroom>

@@ -18,4 +18,13 @@
       border: $primary-light;
     }
   }
+  .layout--dark &--dark {
+    a {
+      background-color: $white-base;
+      color: $black-base;
+      &:hover {
+        background-color: $primary-light;
+      }
+    }
+  }
 }

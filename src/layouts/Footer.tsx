@@ -13,6 +13,7 @@ const Footer = () => {
       }
     >
       <div className='wrap__content'>
+        <a href="https://www.gatsbyjs.org/starters/justinformentin/gatsby-v2-tutorial-starter/">Provide by Gatsby Tutorial Starter - Justin Formentin</a><br />
         <a href="http://bucketplace.co.kr/">Copyright (c) Bucketplace, Inc.</a>
       </div>
     </footer>

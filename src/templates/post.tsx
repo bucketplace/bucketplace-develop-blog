@@ -27,7 +27,7 @@ interface PostProps {
       html: any,
       frontmatter:{
         date: string | boolean,
-        title: string | object | boolean,
+        title: string | boolean,
         tags: string[],
         path: string,
         description: string,
@@ -45,8 +45,6 @@ interface PostProps {
 const Post = ({
   data,
 }: PostProps): React.ReactElement => {
-  const { getDarkThemeClassName } = useContext(DarkModeContext);
-
   const {
     html,
     frontmatter,
@@ -77,7 +75,48 @@ const Post = ({
         pathname={path}
         article
       />
-      <Header
+      <PostHeader 
+        title={title}
+        description={description}
+        authorProfileImage={authorProfileImage}
+        author={author}
+        section={section}
+        date={date}
+      />
+      <Container>
+        <>
+          {!disableCoverImage && (
+            <Img fluid={cover.childImageSharp.fluid} />
+          )}
+          <Content input={html} />
+          <TagsBlock list={tags || []} />
+        </>
+      </Container>
+    </Layout>
+  );
+};
+
+export default Post;
+
+const PostHeader = ({
+  title,
+  description,
+  authorProfileImage,
+  author,
+  section,
+  date,
+}: {
+  date: string | boolean,
+  title: string | boolean,
+  description: string,
+  author: string,
+  section: string,
+  authorProfileImage: any,
+}) => {
+  const { getDarkThemeClassName } = useContext(DarkModeContext);
+
+  return (
+    <Header
         className='post__header'
         innerClassName='post__header__content'
         contentClassName='post__header__content__wrap'
@@ -105,20 +144,8 @@ const Post = ({
           </div>
         </>
       </Header>
-      <Container>
-        <>
-          {!disableCoverImage && (
-            <Img fluid={cover.childImageSharp.fluid} />
-          )}
-          <Content input={html} />
-          <TagsBlock list={tags || []} />
-        </>
-      </Container>
-    </Layout>
-  );
-};
-
-export default Post;
+  )
+}
 
 export const query = graphql`
   query($pathSlug: String!) {

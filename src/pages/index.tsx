@@ -56,6 +56,7 @@ const Index = ({ data }: IndexProps) => {
             <a
               className='main__header__content__wrap__btn'
               href='http://bucketplace.co.kr/recruit'
+              target="self"
             >
               채용중인 포지션
             </a>
