@@ -26,7 +26,9 @@ export const DarkModeProvider = ({
 
   const toggleTheme = () => {
     setTheme((beforeState) => {
-      localStorage.setItem('theme', !beforeState.theme ? 'true' : 'false');
+      if (typeof window !== 'undefined') {
+        window.localStorage.setItem('theme', !beforeState.theme ? 'true' : 'false');
+      }
       return {
         ...beforeState,
         theme: !beforeState.theme
@@ -36,9 +38,9 @@ export const DarkModeProvider = ({
 
   const initState = {
     theme: (
-      localStorage.getItem('theme') == null ?
-        window != null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches :
-        localStorage.getItem('theme') === 'true'),
+      typeof window !== 'undefined' && window.localStorage.getItem('theme') == null ?
+      typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches :
+      typeof window !== 'undefined' && window.localStorage.getItem('theme') === 'true'),
     toggleTheme,
   }
 
@@ -48,19 +50,19 @@ export const DarkModeProvider = ({
   }>(initState);
 
   useEffect(() => {
-    if (localStorage.getItem('theme') == null) {
+    if (typeof window !== 'undefined' && window.localStorage.getItem('theme') == null) {
       setTheme((beforeState) => {
         return {
           ...beforeState,
-          theme: window != null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
+          theme: typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
         }
       });
-      localStorage.setItem('theme', theme.theme ? 'true' : 'false');
+      typeof window !== 'undefined' && window.localStorage.setItem('theme', theme.theme ? 'true' : 'false');
     } else {
       setTheme((beforeState) => {
         return {
           ...beforeState,
-          theme: localStorage.getItem('theme') === 'true',
+          theme: typeof window !== 'undefined' && window.localStorage.getItem('theme') === 'true',
         }
       });
     }

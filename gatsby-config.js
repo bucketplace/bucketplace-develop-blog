@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
       }
     },
@@ -93,8 +93,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://dev.ozip.me/',
-        sitemap: 'https://dev.ozip.me/sitemap.xml',
+        host: 'https://bucketplace.dev/',
+        sitemap: 'https://bucketplace.dev/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },

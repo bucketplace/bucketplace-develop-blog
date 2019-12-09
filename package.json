@@ -71,7 +71,7 @@
     "react-typography": "^0.16.19",
     "typeface-candal": "0.0.54",
     "typeface-open-sans": "0.0.54",
-    "typescript": "^3.6.4",
+    "typescript": "^3.7.3",
     "typography": "^0.16.19"
   },
   "devDependencies": {
