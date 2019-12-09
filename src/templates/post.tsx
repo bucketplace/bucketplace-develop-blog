@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import classNames from 'classnames';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Layout, Container, Content } from 'layouts';
 import { TagsBlock, Header, SEO } from 'components';
 import 'styles/templates/post.scss';
+import DarkModeContext from 'utils/theme';
 
 interface PostProps {
   pageContext: {
@@ -43,6 +45,8 @@ interface PostProps {
 const Post = ({
   data,
 }: PostProps): React.ReactElement => {
+  const { getDarkThemeClassName } = useContext(DarkModeContext);
+
   const {
     html,
     frontmatter,
@@ -96,7 +100,7 @@ const Post = ({
               { author }
             </span>
           </div>
-          <div className='post__header__content__wrap__explain'>
+          <div className={getDarkThemeClassName('post__header__content__wrap__explain')}>
             { section }&nbsp;▪︎&nbsp;{date}
           </div>
         </>

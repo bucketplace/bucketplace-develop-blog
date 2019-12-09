@@ -42,6 +42,9 @@
       }
       &__explain {
         color: $black-light;
+        &--dark {
+          color: $white-light;
+        }
       }
     }
   }

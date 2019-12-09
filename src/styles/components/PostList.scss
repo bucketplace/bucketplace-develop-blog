@@ -18,6 +18,15 @@
       }
     }
   }
+  &--dark {
+    &:hover {
+      .post-list {
+        &__link {
+          color: $white-base;
+        }
+      }
+    }
+  }
 
   &:last-of-type {
     .post-list__link__info {
@@ -79,7 +88,7 @@
         line-height: 40px;
         color: $black-light;
 
-        @media (prefers-color-scheme: dark) {
+        &--dark {
           color: $white-light;
         }
         &__author-profile {

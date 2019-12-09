@@ -39,6 +39,7 @@ interface IndexProps {
 
 const Index = ({ data }: IndexProps) => {
   const { edges } = data.allMarkdownRemark;
+
   return (
     <Layout>
       <Helmet title='오늘의집 기술 블로그' />

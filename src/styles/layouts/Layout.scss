@@ -49,19 +49,21 @@ body {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: $black-base;
-    color: $white-base;
-    a {
-      color: $white-light;
-      transition: color 0.5s;
-      text-decoration: none;
-    }
-  
-    a:hover {
-      text-decoration: none;
-      color: $white-base;
-    }
+.layout--dark {
+  background-color: $black-base;
+  color: $white-base;
+  a {
+    color: $white-light;
+    transition: color 0.5s;
+    text-decoration: none;
   }
+
+  a:hover {
+    text-decoration: none;
+    color: $white-base;
+  }
+}
+
+.dark-theme {
+  transition: color .3s, background-color .3s;
 }
