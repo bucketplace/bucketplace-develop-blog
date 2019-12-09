@@ -27,7 +27,7 @@ export const DarkModeProvider = ({
 
   const toggleTheme = () => {
     setTheme((beforeState) => {
-      window.localStorage.setItem('theme', !beforeState.theme ? 'true' : 'false');
+      localStorage.setItem('theme', !beforeState.theme ? 'true' : 'false');
       return {
         ...beforeState,
         theme: !beforeState.theme
@@ -37,9 +37,9 @@ export const DarkModeProvider = ({
 
   const initState = {
     theme: (
-      window.localStorage.getItem('theme') == null ?
-        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches :
-        window.localStorage.getItem('theme') === 'true'),
+      localStorage.getItem('theme') == null ?
+        window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches :
+        localStorage.getItem('theme') === 'true'),
     toggleTheme,
   }
 
@@ -49,19 +49,19 @@ export const DarkModeProvider = ({
   }>(initState);
 
   useEffect(() => {
-    if (window.localStorage.getItem('theme') == null) {
+    if (localStorage.getItem('theme') == null) {
       setTheme((beforeState) => {
         return {
           ...beforeState,
-          theme: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
+          theme: window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
         }
       });
-      window.localStorage.setItem('theme', theme.theme ? 'true' : 'false');
+      localStorage.setItem('theme', theme.theme ? 'true' : 'false');
     } else {
       setTheme((beforeState) => {
         return {
           ...beforeState,
-          theme: window.localStorage.getItem('theme') === 'true',
+          theme: localStorage.getItem('theme') === 'true',
         }
       });
     }
