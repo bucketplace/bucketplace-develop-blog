@@ -1,0 +1,85 @@
+@import 'styles/utils/theme.scss';
+@import 'styles/utils/headroom.scss';
+
+.headroom {
+  &__link {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    font-size: 1rem;
+    font-family: $theme-font-family-body;
+    color: $black-base;
+    transition: none;
+    flex: 1 0px 0px;
+    &--dark {
+      color: $white-base;
+    }
+    &:hover {
+      color: $black-base;
+      &--dark {
+        color: $white-light;
+      }
+    }
+    @media (max-width: $theme-breakpoints-xs) {
+      font-size: 0.85rem;
+    }
+    svg {
+      @media (max-width: $theme-breakpoints-xs) {
+        max-width: 93px;
+        height: 2rem;
+      }
+    }
+  }
+  &__navigation {
+    display: flex;
+    justify-content: flex-end;
+    font-family: $theme-font-family-body;
+    font-weight: 500;
+    font-size: 1.1rem;
+    align-items: center;
+    @media (max-width: $theme-breakpoints-xs) {
+      font-size: 0.85rem;
+    }
+    &:hover {
+      color: $primary-base;
+    }
+    &__link {
+      color: $black-base;
+      margin-left: 2rem;
+      font-weight: bold;
+      transition: color $transitions-default-duration;
+      @media (max-width: $theme-breakpoints-xs) {
+        margin-left: 1rem;
+      }
+      &--active {
+        color: $primary-base;
+      }
+    }
+    &__toggle-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      padding: 10px;
+      margin-left: 15px;
+      margin-bottom: 0;
+      @media (max-width: $theme-breakpoints-s) {
+        display: none;
+      }
+      & > .emoji {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.layout--dark a.headroom__navigation__link {
+  &:hover {
+    color: $primary-base;
+  }
+  &--active {
+    color: $primary-base;
+  }
+}
+
+

@@ -1,0 +1,51 @@
+@import 'styles/utils/theme.scss';
+
+.suggestion-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background: $white-light;
+  box-shadow: $shadow-suggestion;
+}
+
+.post-suggestion {
+  display: flex;
+  align-items: center;
+  margin: 1rem 3rem 0 3rem;
+  > a {
+    color: $black-base;
+  }
+}
+
+.post__header {
+  &__content {
+    &__wrap {
+      &__title {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      &__description {
+        font-size: 17px;
+        margin-bottom: 15px;
+      }
+      &__author {
+        display: flex;
+        justify-content: center;
+        line-height: 40px;
+        margin-bottom: 15px;
+        &__img {
+          border-radius: $theme-border-radius-round;
+          overflow: hidden;
+          margin-right: 5px;
+        }
+      }
+      &__explain {
+        color: $black-light;
+        &--dark {
+          color: $white-light;
+        }
+      }
+    }
+  }
+}

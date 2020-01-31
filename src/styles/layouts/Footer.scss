@@ -1,0 +1,29 @@
+@import '../utils/theme.scss';
+
+.wrap {
+  position: relative;
+  padding-top: 1rem;
+  bottom: 0;
+  background-color: $gray-10;
+  font-family: $theme-font-family-body;
+  font-weight: 500;
+  &--dark {
+    background-color: $black-base;
+  }
+  &__content {
+    max-width: $theme-layout-base;
+    margin: 10px auto 0;
+    padding-bottom: 1.5rem;
+    text-align: left;
+    font-size: 12px;
+    @media (max-width: 700px) {
+      margin: 10px 2rem 0;
+    }
+    a {
+      font-size: 12px;
+      margin-right: 10px;
+      font-weight: normal;
+      color: $gray-70;
+    }
+  }
+}

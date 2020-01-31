@@ -1,0 +1,41 @@
+@import 'styles/utils/theme.scss';
+
+.header {
+  background-color: $gray-5;
+  color: $gray-90;
+  height: 350px;
+  transition: $transitions-boom-duration height;
+  @media (max-width: $theme-breakpoints-s) {
+    height: 275px;
+  }
+  position: relative;
+  overflow: hidden;
+  &--dark {
+    background-color: $black-light;
+    color: $white-light;
+  }
+  &__content {
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    max-width: $theme-layout-base + 4rem;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  &__sub-title {
+    max-width: 650px;
+    color: $black-base;
+    font-family: $theme-font-family-body;
+    &--dark {
+      color: $white-light;
+    }
+  }
+}
