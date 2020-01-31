@@ -25,10 +25,9 @@ const Content = ({ children }: { children: React.ReactNode }) => {
       <SEO />
       <NavBar />
       {children}
-      <ToggleButton />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default Layout;

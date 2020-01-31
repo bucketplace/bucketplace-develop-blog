@@ -1,8 +1,8 @@
 @import 'styles/utils/theme.scss';
 
 .header {
-  background-color: $white-light;
-  color: $black-base;
+  background-color: $gray-5;
+  color: $gray-90;
   height: 350px;
   transition: $transitions-boom-duration height;
   @media (max-width: $theme-breakpoints-s) {

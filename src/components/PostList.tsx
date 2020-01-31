@@ -70,7 +70,10 @@ const PostList = ({
             )}
             <span className='post-list__link__info__explain__author'>
               { author }
-            </span>&nbsp;▪︎&nbsp;{date}
+            </span>&nbsp;▪︎&nbsp;
+            <span className='post-list__link__info__explain__author__date'>
+              {date}
+            </span>
           </div>
         </div>
         {cover && (

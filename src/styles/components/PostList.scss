@@ -85,7 +85,6 @@
 
       &__explain {
         display: flex;
-        line-height: 40px;
         color: $black-light;
 
         &--dark {
@@ -98,7 +97,11 @@
         }
 
         &__author {
-          font-weight: bold;
+          font-size: 14px;
+          font-weight: 300;
+          &__date {
+            font-size: 14px;
+          }
         }
       }
     }

@@ -19,6 +19,10 @@
     flex-direction: row;
     max-width: $theme-layout-base;
     margin: 0 auto;
+    &__sub-title {
+      color: $gray-90;
+      font-weight: 500;
+    }
   }
 
   svg {
@@ -50,7 +54,6 @@
   transform: translateY(-100%);
   transition: $transitions-headroom-transition;
   width: 100%;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
 
   &>.headroom__wrap {
     padding: 0.75rem 0;
@@ -66,7 +69,6 @@
   transition: $transitions-headroom-transition;
   background-color: $white-base;
   width: 100%;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
 
   &>.headroom__wrap {
     padding: 0.75rem 0;

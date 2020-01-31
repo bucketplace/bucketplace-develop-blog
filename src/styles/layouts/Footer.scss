@@ -4,8 +4,7 @@
   position: relative;
   padding-top: 1rem;
   bottom: 0;
-  box-shadow: $shadow-footer;
-  background-color: $white-light;
+  background-color: $gray-10;
   font-family: $theme-font-family-body;
   font-weight: 500;
   &--dark {
@@ -21,9 +20,10 @@
       margin: 10px 2rem 0;
     }
     a {
-      font-size: 14px;
+      font-size: 12px;
       margin-right: 10px;
-      font-weight: bold;
+      font-weight: normal;
+      color: $gray-70;
     }
   }
 }

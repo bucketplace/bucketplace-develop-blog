@@ -22,7 +22,7 @@ const NavBar = () => {
             className='headroom__link__logo'
             alt='Ohouse Logo'
           />
-          기술 블로그
+          <span className='headroom__wrap__sub-title'>기술 블로그</span>
         </Link>
         <nav className='headroom__navigation'>
           <a
@@ -43,6 +43,6 @@ const NavBar = () => {
       </div>
     </Headroom>
   );
-}
+};
 
 export default NavBar;
