@@ -45,8 +45,8 @@
     }
     &__link {
       color: $black-base;
+      font-size: 15px;
       margin-left: 2rem;
-      font-weight: bold;
       transition: color $transitions-default-duration;
       @media (max-width: $theme-breakpoints-xs) {
         margin-left: 1rem;

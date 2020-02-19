@@ -14,7 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         { children }
       </Content>
     </DarkModeProvider>
-  )
+  );
 };
 
 const Content = ({ children }: { children: React.ReactNode }) => {

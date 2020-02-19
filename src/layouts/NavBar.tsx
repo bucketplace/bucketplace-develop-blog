@@ -22,7 +22,6 @@ const NavBar = () => {
             className='headroom__link__logo'
             alt='Ohouse Logo'
           />
-          <span className='headroom__wrap__sub-title'>기술 블로그</span>
         </Link>
         <nav className='headroom__navigation'>
           <a
@@ -30,8 +29,22 @@ const NavBar = () => {
             className={getDarkThemeClassName('headroom__navigation__link')}
             target="self"
           >
-            소개
+            회사소개
           </a>
+          <Link
+            to='/'
+            className={getDarkThemeClassName('headroom__navigation__link')}
+            activeClassName='headroom__navigation__link--active'
+          >
+            채용
+          </Link>
+          <Link
+            to='/'
+            className={getDarkThemeClassName('headroom__navigation__link')}
+            activeClassName='headroom__navigation__link--active'
+          >
+            사람들
+          </Link>
           <Link
             to='/'
             className={getDarkThemeClassName('headroom__navigation__link')}

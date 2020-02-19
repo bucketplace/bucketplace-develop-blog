@@ -2,13 +2,14 @@
   "parser": "babel-eslint",
   "env": {
     "browser": true,
-    "node": true,
-    "es6": true
+    "commonjs": true,
+    "es6": true,
+    "node": true
   },
   "rules": {
     "strict": 0,
     "no-console": "warn",
-    "quotes": [2, "single", { "avoidEscape": true }],
+    "quotes": [2, "single"],
     "no-unused-vars": [
       1
     ],
@@ -25,8 +26,8 @@
     }
   },
   "extends": [
-    "eslint:recommended",
     "google",
+    "eslint:recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier"
